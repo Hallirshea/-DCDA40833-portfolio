@@ -7,12 +7,12 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: #4d1979;      /* TCU Purple */
+    --primary-color: #80597b;      /* TCU Purple */
     --secondary-color: #7c3aed;    /* Light Purple */
-    --accent-color: #ffd700;       /* Gold accent */
+    --accent-color: #06b6d4;       /* Gold accent */
     --text-color: #333;            /* Dark gray for text */
     --text-secondary: #64748b;     /* Lighter gray for captions */
-    --bg-color: #f4f4f4;           /* Light background */
+    --bg-color: #eed6ffdb;           /* Light background */
     --white: #ffffff;
 }
 
@@ -417,4 +417,10 @@ footer a:hover {
         box-shadow: none;
         page-break-inside: avoid;
     }
+}
+/* Profile image styling */
+.profile-img {
+  width: 250px;
+  border-radius: 12px;
+  border: 3px solid var(--primary-color);
 }
