@@ -429,3 +429,13 @@ The image is stored in the images folder and styled with CSS for size and border
   border-radius: 12px;
   border: 3px solid var(--primary-color);
 }
+
+/* Lab 02 image styling */
+main section img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
