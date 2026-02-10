@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 04 – Tableau Visualization</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="lab02.html">Lab 02</a>
+    <a href="lab03.html">Lab 03</a>
+    <a href="lab04.html">Lab 04</a>
+  </nav>
+
+  <main>
+    <h1>Lab 04: Data Visualization in Tableau</h1>
+
+    <section>
+      <h2>Tableau Visualization</h2>
+       <div class='tableauPlaceholder' id='viz1770766056099' style='position: relative'><noscript><a href='#'><img alt='Tallest People Recorded By Country ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ta&#47;TallestPeopleRecordedbyCountry&#47;Height&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TallestPeopleRecordedbyCountry&#47;Height' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ta&#47;TallestPeopleRecordedbyCountry&#47;Height&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770766056099');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </section>
+
+    <section>
+      <h2>Reflection</h2>
+<p>
+  For this lab, I used a dataset from Kaggle titled “Tallest People in the World,” which contains records of the tallest individuals ever documented, including their height, country, and gender. I chose this dataset because it was easy to understand conceptually and allowed me to form expectations before creating any visualizations. Using Tableau Public, my goal was to explore how extreme height records vary by country and to see whether certain patterns emerge in terms of gender or geographic distribution.
+  </p>
+  <p>
+  During the data preparation process, the dataset uploaded into Tableau Public without any major errors. The columns were clearly labeled, and most fields were automatically assigned the correct data types. One issue I encountered was that the height field listed in feet and inches was treated as text rather than a numeric measure, which made it unusable for quantitative analysis. To resolve this, I used the height measured in centimeters instead, which Tableau correctly recognized as a numerical field. This allowed me to accurately compare values and ensured the visualization reflected actual differences in recorded height rather than formatting issues.
+</p>
+<p>
+  For the visualization, I decided to use a bar chart showing the maximum recorded height for each country because it felt like the clearest way to compare extremes. At first, Tableau automatically summed the heights, but I realized that didn’t make sense for what I was trying to show, so I changed it to display the maximum value instead. I also sorted the countries from tallest to shortest so the tallest records stood out right away. I originally tried adding gender directly into the chart, but it made the visualization confusing, so I chose to use gender as a filter instead, which kept the chart simple while still allowing for exploration.
+</p>
+<p>
+  Before creating the visualization, I expected to see a few countries stand out with especially tall records, while most countries would cluster closer together. I also assumed that the tallest recorded heights would mostly be associated with men and that more recent records might dominate due to advances in nutrition and healthcare over time. Some variation by country was expected, but I did not anticipate extremely dramatic differences between the tallest and shortest maximum values.
+</p>
+<p>
+  One thing that stood out to me was how similar many of the maximum height values were across different countries. Rather than seeing dramatic differences, most countries clustered within a fairly narrow range, with only a few slightly taller records standing out. This made the overall pattern feel more subtle than I expected and highlighted how rare extreme height differences actually are.
+</p>
+<ul>
+  <li>Are extreme height records linked to medical or genetic conditions rather than overall population trends?</li>
+  <li>How do these maximum height records compare to each country’s average height?</li>
+  <li>Why do some older height records still remain unmatched today?</li>
+  <li>What role might time period, nutrition, or healthcare access play in these records?</li>
+</ul>
+
+    </section>
+  </main>
+
+</body>
+</html>
