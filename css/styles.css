@@ -62,11 +62,13 @@ header p {
     font-size: 1.1rem;
 }
 
-nav {
+.site-nav {
     background-color: #3d1461;
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
+    align-items: center;
+    gap: 0.75rem;
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
@@ -74,7 +76,7 @@ nav {
 }
 
 /* Style the navigation list */
-nav ul {
+.site-nav .nav-links {
     list-style: none;           /* Remove bullets */
     padding: 0;                 /* Remove default padding */
     margin: 0;                  /* Remove default margin */
@@ -85,11 +87,11 @@ nav ul {
     flex-wrap: wrap;            /* Wrap on small screens */
 }
 
-nav li {
+.site-nav li {
     list-style: none;           /* Extra insurance - remove bullets */
 }
 
-nav a {
+.site-nav a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -97,8 +99,29 @@ nav a {
     border-radius: 4px;
 }
 
-nav a:hover {
+.site-nav a:hover {
     background-color: var(--primary-color);
+}
+
+.site-nav .nav-toggle {
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: white;
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.24rem;
+}
+
+.site-nav .nav-toggle-bar {
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    background: white;
 }
 
 /* =========================
@@ -382,17 +405,32 @@ footer a:hover {
         font-size: 1.5rem;     /* Smaller on mobile */
     }
 
-    nav {
+    .site-nav {
         font-size: 0.9rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .js .site-nav .nav-toggle {
+        display: inline-flex;
     }
 
     /* Stack navigation vertically on mobile */
-    nav ul {
-        flex-direction: column;  /* Change from row to column */
-        align-items: center;     /* Center the stacked items */
+    .site-nav .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
     }
 
-    nav a {
+    .js .site-nav .nav-links {
+        display: none;
+    }
+
+    .js .site-nav.is-open .nav-links {
+        display: flex;
+    }
+
+    .site-nav a {
         display: block;          /* Full width for easier tapping */
         width: 100%;
         text-align: center;
@@ -411,7 +449,7 @@ footer a:hover {
    Print Styles (Optional)
    ========================= */
 @media print {
-    nav {
+    .site-nav {
         display: none;
     }
 
@@ -438,4 +476,3 @@ main section img {
   display: block;
   margin: 1.5rem 0 2.5rem 0;
 }
-

@@ -9,11 +9,18 @@
 
 <body>
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="lab02.html">Lab 2: AI Evaluation</a>
-      <a href="lab03.html">Lab 3: Visualization Critique</a>
-      <a href="lab04.html" class="active">Lab 4: Tableau Visualization</a>
+    <nav class="site-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <ul id="primary-nav-links" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+        <li><a href="lab03.html">Lab 3: Visualization Critique</a></li>
+        <li><a href="lab04.html" class="active">Lab 4: Tableau Visualization</a></li>
+      </ul>
     </nav>
     <h1>Lab 04: Tableau Visualization</h1>
   </header>
@@ -52,5 +59,6 @@
     </section>
   </main>
 
+  <script src="js/nav.js"></script>
 </body>
 </html>

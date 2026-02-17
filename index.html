@@ -16,8 +16,13 @@ I replaced the placeholder text with information about myself and added a profil
 to make the site feel more personal and professional.
 -->
     <!-- Navigation: Links to all portfolio pages -->
-    <nav>
-        <ul>
+    <nav class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-nav-links" class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="lab02.html">AI Evaluation</a></li>
             <li><a href="tufte-critique.html">Tufte Critique</a></li>
@@ -118,5 +123,6 @@ to make the site feel more personal and professional.
         <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
         <p>&copy; 2026 Halli Shea | DCDA 40833 | TCU</p>
     </footer>
+    <script src="js/nav.js"></script>
 </body>
 </html>

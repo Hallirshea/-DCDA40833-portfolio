@@ -8,10 +8,17 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="lab02.html">Lab 2: AI Evaluation</a>
-            <a href="lab03.html" class="active">Lab 3: Visualization Critique</a>
+        <nav class="site-nav">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+            <ul id="primary-nav-links" class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lab02.html">Lab 2: AI Evaluation</a></li>
+                <li><a href="lab03.html" class="active">Lab 3: Visualization Critique</a></li>
+            </ul>
             <!-- Add more lab links as the semester progresses -->
         </nav>
         <h1>Visualization Critique</h1>
@@ -81,5 +88,6 @@ Information Is Beautiful – Beautiful News
     <footer>
         <p>© 2026 Halli Shea</p>
     </footer>
+    <script src="js/nav.js"></script>
 </body>
 </html>

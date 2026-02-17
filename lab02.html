@@ -12,8 +12,13 @@
 
 
     <!-- Navigation: Links to all portfolio pages -->
-    <nav>
-        <ul>
+    <nav class="site-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-links" aria-label="Toggle navigation menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-nav-links" class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="ai-evaluation.html">AI Evaluation</a></li>
             <li><a href="tufte-critique.html">Tufte Critique</a></li>
@@ -157,4 +162,5 @@
 
 </main>
 
+<script src="js/nav.js"></script>
 </body>
