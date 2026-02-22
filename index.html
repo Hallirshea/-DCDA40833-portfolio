@@ -36,6 +36,10 @@ to make the site feel more personal and professional.
     <header>
         <h1>Halli Shea</h1>
         <p>DCDA 40833 Skills Portfolio | Spring 2026</p>
+        <!-- Dark mode toggle button -->
+<button id="darkModeToggle" type="button" aria-label="Toggle dark mode">
+  Dark Mode
+</button>
     </header>
 
     <main>
@@ -123,6 +127,34 @@ to make the site feel more personal and professional.
         <p><a href="https://github.com/yourusername/your-repo-name">View Repository on GitHub</a></p>
         <p>&copy; 2026 Halli Shea | DCDA 40833 | TCU</p>
     </footer>
+    Paste this in `index.html` **near the bottom**, **right before** your existing `<script src="js/nav.js"></script>` line:
+
+```html
+<script>
+  // Find the dark mode button
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  // Turn dark mode on/off
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    // Save user choice
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Load saved theme on refresh
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  // Run toggle when button is clicked
+  darkModeToggle.addEventListener("click", toggleDarkMode);
+</script>
+```
     <script src="js/nav.js"></script>
 </body>
 </html>
