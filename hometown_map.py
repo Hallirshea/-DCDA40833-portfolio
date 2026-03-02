@@ -5,7 +5,7 @@ from folium import IFrame
 from urllib.parse import quote
 
 # =======================
-MAPBOX_TOKEN = "pk.eyJ1IjoiaGFsbGlyc2hlYSIsImEiOiJjbW0wcnI1Mm8wMXJ6MnZxMnN2dGJxYnVyIn0.5FgAWwaIxsP8cfOtpxqq9A"
+MAPBOX_TOKEN = ""
 MAPBOX_USERNAME = "hallirshea"
 MAPBOX_STYLE_ID = "cmm9mgsot000s01s59gifcql3"
 CSV_PATH = "hometown_locations.csv"  
