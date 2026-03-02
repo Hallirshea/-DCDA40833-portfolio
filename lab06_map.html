@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2f8c4cb6228b3c2f187445c5c85df7b2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2f8c4cb6228b3c2f187445c5c85df7b2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2f8c4cb6228b3c2f187445c5c85df7b2 = L.map(
+                "map_2f8c4cb6228b3c2f187445c5c85df7b2",
+                {
+                    center: [32.73900870000001, -97.31483610000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_551a464bedebbb475ff9ca61372d4bdc = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/hallirshea/cmm9mgsot000s01s59gifcql3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFsbGlyc2hlYSIsImEiOiJjbW0wcnI1Mm8wMXJ6MnZxMnN2dGJxYnVyIn0.5FgAWwaIxsP8cfOtpxqq9A",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 Mapbox \u00a9 OpenStreetMap",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_551a464bedebbb475ff9ca61372d4bdc.addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var marker_6489f06e0b39cd58714548a0516ba606 = L.marker(
+                [32.709979, -97.367484],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_6cefbd8d27aea8d417d60e9ec5bf925a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_420aeb8867136628966300dc087fce9c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_329727062798c07f86d1c67de5d9a22b = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkFtb24gRy4gQ2FydGVyIFN0YWRpdW08L2g0PgogICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTNweDsgbGluZS1oZWlnaHQ6MS4zOyI+CiAgICAgICAgPGI+VHlwZTo8L2I+IFNwb3J0czxicj4KICAgICAgICBIb21lIG9mIFRDVSBmb290YmFsbCBhbmQgdGhlIGJlc3QgZmFsbCBTYXR1cmRheXMgaW4gRm9ydCBXb3J0aC4KICAgICAgPC9kaXY+CiAgICAgIDxpbWcgc3JjPSJodHRwczovL2dvZnJvZ3MuY29tL2ltYWdlcy8yMDIzLzExLzEvQW1vbl9HLl9DYXJ0ZXJfU3RhZGl1bS5qcGcgIiBzdHlsZT0id2lkdGg6MjYwcHg7aGVpZ2h0OmF1dG87Ym9yZGVyLXJhZGl1czoxMHB4O21hcmdpbi10b3A6OHB4OyI+CiAgICA8L2Rpdj4KICAgIA==" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_420aeb8867136628966300dc087fce9c.setContent(i_frame_329727062798c07f86d1c67de5d9a22b);
+            
+        
+
+        marker_6489f06e0b39cd58714548a0516ba606.bindPopup(popup_420aeb8867136628966300dc087fce9c)
+        ;
+
+        
+    
+    
+            marker_6489f06e0b39cd58714548a0516ba606.bindTooltip(
+                `<div>
+                     Amon G. Carter Stadium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6489f06e0b39cd58714548a0516ba606.setIcon(icon_6cefbd8d27aea8d417d60e9ec5bf925a);
+            
+    
+            var marker_526f89a2fcac79ad85510c2973e84bfb = L.marker(
+                [32.705623, -97.412813],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_6c596baf5f43bcfd6df55cbfbf380a99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree-conifer",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fef4dfbeeafd14b7d0a0a506e13b8254 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_a0b2fe6f5f0958e0a080c0b2b0682a3c = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPlRyaW5pdHkgUml2ZXIgVHJhaWw8L2g0PgogICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTNweDsgbGluZS1oZWlnaHQ6MS4zOyI+CiAgICAgICAgPGI+VHlwZTo8L2I+IFBhcms8YnI+CiAgICAgICAgTXkgZmF2b3JpdGUgcGxhY2UgZm9yIGxvbmcgd2Fsa3MgYW5kIGNyZWF0aXZlIHRoaW5raW5nIGFsb25nIHRoZSB3YXRlci4KICAgICAgPC9kaXY+CiAgICAgIDxpbWcgc3JjPSJodHRwczovL2Fzc2V0cy5zaW1wbGV2aWV3aW5jLmNvbS9zaW1wbGV2aWV3L2ltYWdlL3VwbG9hZC9jcm0vZm9ydHdvcnRoL0hvcnNlYmFja1JpZGluZ0Rvd250b3duMC1kMDU2ZjQzZTUwNTZhMzRfZDA1NmY2MDUtNTA1Ni1hMzQ4LTNhY2M3YTg3OWNhNmM1ZjguanBnICIgc3R5bGU9IndpZHRoOjI2MHB4O2hlaWdodDphdXRvO2JvcmRlci1yYWRpdXM6MTBweDttYXJnaW4tdG9wOjhweDsiPgogICAgPC9kaXY+CiAgICA=" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_fef4dfbeeafd14b7d0a0a506e13b8254.setContent(i_frame_a0b2fe6f5f0958e0a080c0b2b0682a3c);
+            
+        
+
+        marker_526f89a2fcac79ad85510c2973e84bfb.bindPopup(popup_fef4dfbeeafd14b7d0a0a506e13b8254)
+        ;
+
+        
+    
+    
+            marker_526f89a2fcac79ad85510c2973e84bfb.bindTooltip(
+                `<div>
+                     Trinity River Trail
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_526f89a2fcac79ad85510c2973e84bfb.setIcon(icon_6c596baf5f43bcfd6df55cbfbf380a99);
+            
+    
+            var marker_e1c4a1e01e5827993a0d976e0c2091a9 = L.marker(
+                [32.823736, -96.789977],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_e47960970762053a2fc55363076a4526 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "glass",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47b86e1d19658a6c96efd94afcab2656 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_9073919addaaf6465a7d8bd0ea515258 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPlN0ZXdhcnQncyBDb2NrdGFpbCBDbHViPC9oND4KICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjEzcHg7IGxpbmUtaGVpZ2h0OjEuMzsiPgogICAgICAgIDxiPlR5cGU6PC9iPiBCYXI8YnI+CiAgICAgICAgQ2hhbXBhZ25lIGFuZCBjYXZpYXIgdmliZXMgd2l0aCBhIGN1dGUgdXBzY2FsZSBlbmVyZ3kuCiAgICAgIDwvZGl2PgogICAgICA8aW1nIHNyYz0iaHR0cHM6Ly9wbGF0Zm9ybS5kYWxsYXMuZWF0ZXIuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy9zaXRlcy8yMS8yMDI1LzAyL1N0ZXdhcnRfcy1Dcm9xdWV0LUNvY2t0YWlsc19QaG90by1Db3VydGVzeS1vZi1aYWNoLVNpbW1vbnNfMTIuanBnPyBxdWFsaXR5PTkwJnN0cmlwPWFsbCZjcm9wPTAuMDA3ODEyNSwwLDk5Ljk4NDM3NSwxMDAgIiBzdHlsZT0id2lkdGg6MjYwcHg7aGVpZ2h0OmF1dG87Ym9yZGVyLXJhZGl1czoxMHB4O21hcmdpbi10b3A6OHB4OyI+CiAgICA8L2Rpdj4KICAgIA==" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_47b86e1d19658a6c96efd94afcab2656.setContent(i_frame_9073919addaaf6465a7d8bd0ea515258);
+            
+        
+
+        marker_e1c4a1e01e5827993a0d976e0c2091a9.bindPopup(popup_47b86e1d19658a6c96efd94afcab2656)
+        ;
+
+        
+    
+    
+            marker_e1c4a1e01e5827993a0d976e0c2091a9.bindTooltip(
+                `<div>
+                     Stewart's Cocktail Club
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1c4a1e01e5827993a0d976e0c2091a9.setIcon(icon_e47960970762053a2fc55363076a4526);
+            
+    
+            var marker_1702b2bb54953649e6c0c1cb766a94f5 = L.marker(
+                [32.735934, -97.366802],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_3c7f05c7ec23532ed97ce1e409c58bc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37104259e07a3ba6bb7850875b9cf8a8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_671dd95bc368cf499e87dcba3681bb31 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkZvcnQgV29ydGggQm90YW5pYyBHYXJkZW48L2g0PgogICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTNweDsgbGluZS1oZWlnaHQ6MS4zOyI+CiAgICAgICAgPGI+VHlwZTo8L2I+IExhbmRtYXJrPGJyPgogICAgICAgIFBlYWNlZnVsIGdhcmRlbnMgdGhhdCBmZWVsIGxpa2UgYW4gZXNjYXBlIGZyb20gdGhlIGNpdHkuCiAgICAgIDwvZGl2PgogICAgICA8aW1nIHNyYz0iaHR0cHM6Ly93d3cuZm9ydHdvcnRodGV4YXMuZ292L2ZpbGVzL2Fzc2V0cy9wdWJsaWMvdi8xL2xpYnJhcnkvaW1hZ2VzL2ZlYXR1cmUtaW1hZ2VzL2JvdGFuaWMtZ2FyZGVuLXBhc3Nlcy5qcGc/dz0xMjAwICIgc3R5bGU9IndpZHRoOjI2MHB4O2hlaWdodDphdXRvO2JvcmRlci1yYWRpdXM6MTBweDttYXJnaW4tdG9wOjhweDsiPgogICAgPC9kaXY+CiAgICA=" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_37104259e07a3ba6bb7850875b9cf8a8.setContent(i_frame_671dd95bc368cf499e87dcba3681bb31);
+            
+        
+
+        marker_1702b2bb54953649e6c0c1cb766a94f5.bindPopup(popup_37104259e07a3ba6bb7850875b9cf8a8)
+        ;
+
+        
+    
+    
+            marker_1702b2bb54953649e6c0c1cb766a94f5.bindTooltip(
+                `<div>
+                     Fort Worth Botanic Garden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1702b2bb54953649e6c0c1cb766a94f5.setIcon(icon_3c7f05c7ec23532ed97ce1e409c58bc5);
+            
+    
+            var marker_476060865a4aff061c9d9ac771653161 = L.marker(
+                [32.789412, -97.346713],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_2a05b581a9b246644cf10e5cfc8185ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70a90eb8eb3d844c9f573187e4030ba6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_c92159299faa9f16322907b99ebc77e3 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkZvcnQgV29ydGggU3RvY2t5YXJkczwvaDQ+CiAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxM3B4OyBsaW5lLWhlaWdodDoxLjM7Ij4KICAgICAgICA8Yj5UeXBlOjwvYj4gTGFuZG1hcms8YnI+CiAgICAgICAgQ2xhc3NpYyB3ZXN0ZXJuIEZvcnQgV29ydGggd2l0aCBjYXR0bGUgZHJpdmVzIGFuZCBjb3dib3kgZW5lcmd5LgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vd3d3LmZvcnR3b3J0aHN0b2NreWFyZHMub3JnL3NpdGVzL2RlZmF1bHQvZmlsZXMvMjAyMi0wNC9GVyUyMEhlcmQlMjBkcml2ZSUyMHVuZGVyJTIwc2lnbiUyMDEzeDE5JTIwcHJpbnQlMjBubyUyMGxvZ28tXzAuanBlZyAiIHN0eWxlPSJ3aWR0aDoyNjBweDtoZWlnaHQ6YXV0bztib3JkZXItcmFkaXVzOjEwcHg7bWFyZ2luLXRvcDo4cHg7Ij4KICAgIDwvZGl2PgogICAg" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_70a90eb8eb3d844c9f573187e4030ba6.setContent(i_frame_c92159299faa9f16322907b99ebc77e3);
+            
+        
+
+        marker_476060865a4aff061c9d9ac771653161.bindPopup(popup_70a90eb8eb3d844c9f573187e4030ba6)
+        ;
+
+        
+    
+    
+            marker_476060865a4aff061c9d9ac771653161.bindTooltip(
+                `<div>
+                     Fort Worth Stockyards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_476060865a4aff061c9d9ac771653161.setIcon(icon_2a05b581a9b246644cf10e5cfc8185ca);
+            
+    
+            var marker_9795ff37d53ec013386423a3a0a3d8a8 = L.marker(
+                [32.747083, -97.372561],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_7e1d059d9c60deb97d75b70ff72dc8d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a570dc523304ab6d8c6a88eb17f0d03 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_f9119ab838a92eb2d272fe7e97edb6bc = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkJvd2llIEhvdXNlIEhvdGVsPC9oND4KICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjEzcHg7IGxpbmUtaGVpZ2h0OjEuMzsiPgogICAgICAgIDxiPlR5cGU6PC9iPiBIb3RlbDxicj4KICAgICAgICBMdXh1cnkgd2VzdGVybiBhZXN0aGV0aWMgaG90ZWwgdGhhdCByZXByZXNlbnRzIG1vZGVybiBGb3J0IFdvcnRoLgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vbWVkaWEuY250cmF2ZWxlci5jb20vcGhvdG9zLzY2MjE4MjRkMzlhMDg1NmU5YjI5OTQ4My8xNjo5L3dfMjU2MCxjX2xpbWl0L0Jvd2llJTIwSG91c2UsJTIwQXViZXJnZSUyMFJlc29ydHMlMjBDb2xsZWN0aW9uLnBuZyAiIHN0eWxlPSJ3aWR0aDoyNjBweDtoZWlnaHQ6YXV0bztib3JkZXItcmFkaXVzOjEwcHg7bWFyZ2luLXRvcDo4cHg7Ij4KICAgIDwvZGl2PgogICAg" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_9a570dc523304ab6d8c6a88eb17f0d03.setContent(i_frame_f9119ab838a92eb2d272fe7e97edb6bc);
+            
+        
+
+        marker_9795ff37d53ec013386423a3a0a3d8a8.bindPopup(popup_9a570dc523304ab6d8c6a88eb17f0d03)
+        ;
+
+        
+    
+    
+            marker_9795ff37d53ec013386423a3a0a3d8a8.bindTooltip(
+                `<div>
+                     Bowie House Hotel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9795ff37d53ec013386423a3a0a3d8a8.setIcon(icon_7e1d059d9c60deb97d75b70ff72dc8d7);
+            
+    
+            var marker_69dd0638637c142385f00b09bb00398b = L.marker(
+                [32.740778, -97.387893],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_913f63dbe58dea1cde555bfab8de3467 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76efd4ecc4b5f45f741efa8d8432b69c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_3c8deb35cdb29de178fe2561d0812e84 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkh1ZHNvbiBIb3VzZTwvaDQ+CiAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxM3B4OyBsaW5lLWhlaWdodDoxLjM7Ij4KICAgICAgICA8Yj5UeXBlOjwvYj4gUmVzdGF1cmFudDxicj4KICAgICAgICBDb2FzdGFsIHN0eWxlIHJlc3RhdXJhbnQga25vd24gZm9yIG1hcnRpbmlzIGFuZCBveXN0ZXJzLgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vd3d3LnBhcGVyY2l0eW1hZy5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMjMvMTIvSHVkc29uLUhvdXNlLW9wZW5zLUZyaWRheS1pbnNpZGUtRm9ydC1Xb3J0aHMtaGlzdG9yaWMtaWNlLWhvdXNlLi1QaG90by1ieS1Db3VydG5leS1EYWJuZXktMzAweDIyNS5qcGVnICIgc3R5bGU9IndpZHRoOjI2MHB4O2hlaWdodDphdXRvO2JvcmRlci1yYWRpdXM6MTBweDttYXJnaW4tdG9wOjhweDsiPgogICAgPC9kaXY+CiAgICA=" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_76efd4ecc4b5f45f741efa8d8432b69c.setContent(i_frame_3c8deb35cdb29de178fe2561d0812e84);
+            
+        
+
+        marker_69dd0638637c142385f00b09bb00398b.bindPopup(popup_76efd4ecc4b5f45f741efa8d8432b69c)
+        ;
+
+        
+    
+    
+            marker_69dd0638637c142385f00b09bb00398b.bindTooltip(
+                `<div>
+                     Hudson House
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_69dd0638637c142385f00b09bb00398b.setIcon(icon_913f63dbe58dea1cde555bfab8de3467);
+            
+    
+            var marker_78976eb4c15b5d3e54b3348c8dc945be = L.marker(
+                [32.730646, -97.336811],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_77b91edfbf4327a0441c70d46e3e6c85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ec8fe030894f77e4a76b9663bcb52de = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_60da41b695baaa5a17a77da9667118c3 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPk1hZ25vbGlhIEF2ZW51ZTwvaDQ+CiAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxM3B4OyBsaW5lLWhlaWdodDoxLjM7Ij4KICAgICAgICA8Yj5UeXBlOjwvYj4gTmVpZ2hib3Job29kPGJyPgogICAgICAgIFRyZW5keSBzdHJldGNoIG9mIGxvY2FsIHJlc3RhdXJhbnRzIGFuZCBzbWFsbCBidXNpbmVzc2VzLgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZnd0eC5jb20vZG93bmxvYWRzLzE0MzQ4L2Rvd25sb2FkL21hZ25vbGlhLmpwZy5qcGU/Y2I9MTZiYTY3NmY4NGZhNDVhMzcyMjhkYjdlNjVmNzI1N2IgIiBzdHlsZT0id2lkdGg6MjYwcHg7aGVpZ2h0OmF1dG87Ym9yZGVyLXJhZGl1czoxMHB4O21hcmdpbi10b3A6OHB4OyI+CiAgICA8L2Rpdj4KICAgIA==" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_8ec8fe030894f77e4a76b9663bcb52de.setContent(i_frame_60da41b695baaa5a17a77da9667118c3);
+            
+        
+
+        marker_78976eb4c15b5d3e54b3348c8dc945be.bindPopup(popup_8ec8fe030894f77e4a76b9663bcb52de)
+        ;
+
+        
+    
+    
+            marker_78976eb4c15b5d3e54b3348c8dc945be.bindTooltip(
+                `<div>
+                     Magnolia Avenue
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_78976eb4c15b5d3e54b3348c8dc945be.setIcon(icon_77b91edfbf4327a0441c70d46e3e6c85);
+            
+    
+            var marker_44a7a584878dc1401f93038240549083 = L.marker(
+                [32.697042, -97.368053],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_04509ac5fbca2241605b335eb7324ca0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6731e3e430e098e3ffbea8b3495cda0d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_29364ea9aa4082c5394d265bf0855329 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPkNhZmUgQmVsbGE8L2g0PgogICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTNweDsgbGluZS1oZWlnaHQ6MS4zOyI+CiAgICAgICAgPGI+VHlwZTo8L2I+IFJlc3RhdXJhbnQ8YnI+CiAgICAgICAgQ296eSBJdGFsaWFuIHNwb3QgbmVhciBUQ1Ugd2l0aCBhIG5laWdoYm9yaG9vZCBmZWVsLgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vZnd0eC5jb20vZG93bmxvYWRzLzQzNDYzL2Rvd25sb2FkL2NhZmViZWxsYV9md21fbWF5X2N3MTUuanBnP2NiPTNkMmQ4ZTVkYjQwMDBmNTI0MzhiOTYwMTc0YjgxYWY5ICIgc3R5bGU9IndpZHRoOjI2MHB4O2hlaWdodDphdXRvO2JvcmRlci1yYWRpdXM6MTBweDttYXJnaW4tdG9wOjhweDsiPgogICAgPC9kaXY+CiAgICA=" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_6731e3e430e098e3ffbea8b3495cda0d.setContent(i_frame_29364ea9aa4082c5394d265bf0855329);
+            
+        
+
+        marker_44a7a584878dc1401f93038240549083.bindPopup(popup_6731e3e430e098e3ffbea8b3495cda0d)
+        ;
+
+        
+    
+    
+            marker_44a7a584878dc1401f93038240549083.bindTooltip(
+                `<div>
+                     Cafe Bella
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44a7a584878dc1401f93038240549083.setIcon(icon_04509ac5fbca2241605b335eb7324ca0);
+            
+    
+            var marker_1589e8b3a7d0a570453a039cdc8941b3 = L.marker(
+                [32.709854, -97.399254],
+                {
+}
+            ).addTo(map_2f8c4cb6228b3c2f187445c5c85df7b2);
+        
+    
+            var icon_4fd9ac13a0f3fd5cd6a377826d28b084 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkgreen",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4cc2539ed7235bae6b7631c81e5bf093 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var i_frame_cb5db5d8de803eabf4beb546e69cbaa1 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9IndpZHRoOjI2MHB4OyI+CiAgICAgIDxoNCBzdHlsZT0ibWFyZ2luOjAgMCA2cHggMDsiPlRoZSBTaG9wcyBhdCBDbGVhcmZvcms8L2g0PgogICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTNweDsgbGluZS1oZWlnaHQ6MS4zOyI+CiAgICAgICAgPGI+VHlwZTo8L2I+IFNob3BwaW5nPGJyPgogICAgICAgIE91dGRvb3Igc2hvcHBpbmcgYXJlYSB3aXRoIHJlc3RhdXJhbnRzIGFuZCBsdXh1cnkgcmV0YWlsLgogICAgICA8L2Rpdj4KICAgICAgPGltZyBzcmM9Imh0dHBzOi8vd3d3LmJlY2tncm91cC5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMTkvMDYvTVJfQ2xlYXJmb3JrX0V4dF8wNi5qcGcgIiBzdHlsZT0id2lkdGg6MjYwcHg7aGVpZ2h0OmF1dG87Ym9yZGVyLXJhZGl1czoxMHB4O21hcmdpbi10b3A6OHB4OyI+CiAgICA8L2Rpdj4KICAgIA==" width="280" style="border:none !important;" height="320"></iframe>`)[0];
+                popup_4cc2539ed7235bae6b7631c81e5bf093.setContent(i_frame_cb5db5d8de803eabf4beb546e69cbaa1);
+            
+        
+
+        marker_1589e8b3a7d0a570453a039cdc8941b3.bindPopup(popup_4cc2539ed7235bae6b7631c81e5bf093)
+        ;
+
+        
+    
+    
+            marker_1589e8b3a7d0a570453a039cdc8941b3.bindTooltip(
+                `<div>
+                     The Shops at Clearfork
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1589e8b3a7d0a570453a039cdc8941b3.setIcon(icon_4fd9ac13a0f3fd5cd6a377826d28b084);
+            
+</script>
+</html>
