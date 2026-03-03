@@ -39,4 +39,12 @@
 <iframe src="lab06_map.html" width="100%" height="700" style="border:none;"></iframe>
 
 </body>
+<section class="reflection">
+  <h2>Reflection</h2>
+  <p>For this lab, I made an interactive “hometown” map of Fort Worth using a custom Mapbox basemap and a CSV dataset of places that feel like my version of the city. I chose locations like Amon G. Carter Stadium, the Trinity River Trail, the Botanic Garden, the Stockyards, Magnolia Avenue, and Clearfork because they each represent a different side of Fort Worth—school spirit, outdoors, classic history, and the newer “going out” areas. Building the dataset also forced me to think about how to describe places clearly without using private addresses, and how important consistency is when you’re making a map from a spreadsheet.</p>
+
+  <p>The most technical part was connecting everything together: I used Python to read my CSV, send each address to the Mapbox Geocoding API, and then plot the coordinates on a Folium map that uses my Mapbox style as the background. The biggest challenge was debugging when things didn’t show up (like when my CSV filename didn’t match, or when my latitude/longitude columns weren’t being created because the geocoding loop wasn’t running the way I thought). Once it worked, it felt really satisfying because the map is basically a “live” output of the data—if you change the CSV, you can regenerate the map and instantly see the update.</p>
+
+  <p>I also improved the design by styling markers based on location type (sports, parks, restaurants, landmarks, etc.) so the map isn’t just a bunch of identical pins. Overall, this lab made mapping feel less like “just aesthetics” and more like a process: clean data → geocode → visualize → publish. It also helped me see how location data can tell a story, because the places I picked say a lot about what I actually do and value in Fort Worth.</p>
+</section>
 </html>
