@@ -529,3 +529,29 @@ body.dark-mode .viz-container figcaption {
 body.dark-mode footer {
   background-color: #111111;
 }
+/* General page styling to make the portfolio cleaner and easier to read */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eebeed;
+  line-height: 1.6;
+}
+
+/* Styling for headings to give the site a more polished look */
+h1, h2 {
+  color: #690055;
+}
+
+/* Adds spacing and structure to lab content sections */
+.lab-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Styles images so they scale nicely on the page */
+.lab-image {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 15px;
+  border-radius: 8px;
+}
